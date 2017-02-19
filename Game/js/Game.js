@@ -17,15 +17,18 @@ function create() {
 
     // add background sprite
     var background = game.add.sprite(0, 0,'background');
-    background.scale.setTo(2);
 
     // add player sprite
     player = game.add.sprite(37, 37, 'John');
-    player.scale.setTo(2);
+
     player.animations.add('idle', range(12), 6, true);
     // add physics to it
     game.physics.arcade.enable(player);
     player.enableBody = true;
+
+    // scaling sprites
+    background.scale.setTo(2);
+    player.scale.setTo(2);
 
     // initialize control with cursor keys
     cursors = game.input.keyboard.createCursorKeys();
