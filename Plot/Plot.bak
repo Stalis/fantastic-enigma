@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="koi8-r"?>
+<YWRITER5>
+	<PROJECT>
+		<Ver>5</Ver>
+		<Title><![CDATA[]]></Title>
+		<LaTeXHeaderFile><![CDATA[]]></LaTeXHeaderFile>
+		<Desc><![CDATA[]]></Desc>
+		<FieldTitle1><![CDATA[]]></FieldTitle1>
+		<FieldTitle2><![CDATA[]]></FieldTitle2>
+		<FieldTitle3><![CDATA[]]></FieldTitle3>
+		<FieldTitle4><![CDATA[]]></FieldTitle4>
+		<Bio><![CDATA[]]></Bio>
+		<AuthorName><![CDATA[]]></AuthorName>
+		<CollabFolder></CollabFolder>
+		<WordTarget>0</WordTarget>
+		<EndFrontMatterChID>0</EndFrontMatterChID>
+		<EndMiddleChID>0</EndMiddleChID>
+		<EndBeginningChID>0</EndBeginningChID>
+		<WordCountStart>0</WordCountStart>
+		<XMLFileVersion>4</XMLFileVersion>
+		<LatexSingleQuotes>0</LatexSingleQuotes>
+		<LatexSuppressChapterTitles>0</LatexSuppressChapterTitles>
+		<LatexSceneDividerStyle>0</LatexSceneDividerStyle>
+		<HtmlSceneDivider></HtmlSceneDivider>
+		<HtmlEncoding></HtmlEncoding>
+		<HtmlUnicode>0</HtmlUnicode>
+		<LastFullBackup>0001-01-01</LastFullBackup>
+		<WordTargetStartDate>0001-01-01</WordTargetStartDate>
+		<WordTargetEndDate>0001-01-01</WordTargetEndDate>
+		<MRUSpecificDate>0001-01-01</MRUSpecificDate>
+		<MRUSpecificTime>00:00</MRUSpecificTime>
+		<LastViewedScID>7</LastViewedScID>
+		<DeadlineDate1>0001-01-01</DeadlineDate1>
+		<DeadlineDate2>0001-01-01</DeadlineDate2>
+		<DeadlineDate3>0001-01-01</DeadlineDate3>
+		<DeadlineDate4>0001-01-01</DeadlineDate4>
+		<DeadlineDate5>0001-01-01</DeadlineDate5>
+		<DeadlineStartDate1>0001-01-01</DeadlineStartDate1>
+		<DeadlineStartDate2>0001-01-01</DeadlineStartDate2>
+		<DeadlineStartDate3>0001-01-01</DeadlineStartDate3>
+		<DeadlineStartDate4>0001-01-01</DeadlineStartDate4>
+		<DeadlineStartDate5>0001-01-01</DeadlineStartDate5>
+	</PROJECT>
+	<LOCATIONS>
+	<LOCATION>
+		<ID>1</ID>
+		<Title><![CDATA[оНЯЮДНВМЮЪ ОКНЫЮДЙЮ]]></Title>
+		<AKA><![CDATA[Landing Base]]></AKA>
+	</LOCATION>
+	<LOCATION>
+		<ID>2</ID>
+		<Title><![CDATA[нЯМНБМЮЪ АЮГЮ]]></Title>
+		<AKA><![CDATA[Main Base]]></AKA>
+	</LOCATION>
+	<LOCATION>
+		<ID>3</ID>
+		<Title><![CDATA[нАЯЕПБЮРНПХЪВ]]></Title>
+		<ImageFile><![CDATA[Scene.png]]></ImageFile>
+		<AKA><![CDATA[Observatory]]></AKA>
+	</LOCATION>
+	<LOCATION>
+		<ID>4</ID>
+		<Title><![CDATA[оСРЭ Й НЯМНБМНИ АЮГЕ]]></Title>
+		<AKA><![CDATA[Path to Main Base]]></AKA>
+	</LOCATION>
+	<LOCATION>
+		<ID>5</ID>
+		<Title><![CDATA[рПЮМЯОНПРМЮЪ ЯРЮМЖХЪ]]></Title>
+		<AKA><![CDATA[Transport Station]]></AKA>
+	</LOCATION>
+	<LOCATION>
+		<ID>6</ID>
+		<Title><![CDATA[йПХЯРЮКЭМШИ ЙЮМЭНМ]]></Title>
+		<AKA><![CDATA[Crystal Canyon]]></AKA>
+	</LOCATION>
+	</LOCATIONS>
+	<ITEMS>
+	</ITEMS>
+	<CHARACTERS>
+	<CHARACTER>
+		<ID>1</ID>
+		<Title><![CDATA[лХП]]></Title>
+		<Desc><![CDATA[оКЧЯ, Я СВ╦РНЛ РНЦН, ВРН НМЮ ОПЕДЯРЮБКЪЕР ЯНАНИ ЯЙНОКЕМХЕ ЮЯРЕПНХДНБ, ЛЕФДС МХЛХ ДНКФМН ХДРХ БГЮХЛНДЕИЯРБХЕ. бЮПХЮМРШ ЕЯРЭ РЮЙХЕ: ЩРН ЛНЦСР АШРЭ ЯЦСЯРЙХ ОКЮГЛШ ЙНРНПШЛХ НМЮ ЯОНЯНАМЮ СОПЮБКЪРЭ. дПСЦНИ БЮПХЮМР - ЯРПСЙРСПШ ЮКЪ ДПНМШ, МН НМХ АСДСР НВЕМЭ ОНДНГПХРЕКЭМШ ЯН ЯРНПНМШ) хАН КЕРЮЧР РЮЙХЕ ЦКШАШ ЛЕФДС ЮЯРЕПНХДЮЛХ ХЦМНПХПСЪ ЦПЮБХРЮЖХЧ Х ОПНВЮЪ)]]></Desc>
+		<Notes><![CDATA[хМНОКЮМЕРМШИ НПЦЮМХГЛ ЙНЯЛХВЕЯЙХУ ЛЮЯЬРЮАНБ, ОПЕДЯРЮБКЕММШИ ЯЕРЭ. ЮЯРЕПНХДНБ, ЯБЪГЮММШУ ЛЕФДС ЯНАНИ ЛЕФОПНЯРПЮМЯРБНЛ. ъБКЪЕР ЯНАНИ ДНБНКЭМН ЛХПМНЕ ЯСЫЕЯРБН, ЙНРНПНЕ ДПЕИТСЕР НР ГБЕГДШ Й ГБЕГДЕ Х ОХРЮЕРЯЪ ХУ ЩМЕПЦХЕИ , ГЮ ЯВ╦Р ЙНРНПНИ ЯБНАНДМН ЛЕМЪЕР ЯБНЧ ЯРПСЙРСПС ОНД ПЮГМШЕ МСФДШ. вЮЯРЭ МЕМСФМШУ ЩКЕЛЕМРНБ ЙНРНПШЕ МЕМСФМШ ЯСЫЕЯРБС БШБНДЪРЯЪ ХГ МЕЦН Х НАПЮГЧР БОНКМЕ ОПХЛЕЛКХЛСЧ ЮРЛНЯТЕПС БНЙПСЦ БЯЕУ ЮЯРЕПНХДНБ.
+оН ОПХАШРХХ Й ГБЕГДЕ, ГЮБХЯЮЕР МЮ АКХФЮИЬЕИ ЙНЛТНПРМНИ Й ГБЕГДЕ НПАХРЕ Х МЮВХМЮЕР ОХРЮРЭЯЪ. пЮГСЛЮ ЙЮЙ РЮЙНБНЦН С МЕ╦ МЕР, ДЕИЯРБХЪ ХДСР МЮ СПНБМЕ ХМЯРХМЙРНБ.
+бМЕЬМХИ БХД: юЯРЕПНХДМЮЪ ОНБЕПУМНЯРЭ, ОПЕХЛСЫЕЯРБЕММН ЛЕРЮККН-ЙЮЛЕММЮЪ ЯНЯРНЪЫЮЪ ХГ НРДЕКЭМШУ ОКХР. мЮ ОНБЕПУМНЯРХ БЯРПЕВЮЧРЯЪ ПЮГКХВМШЕ НАЗЕЙРШ, МЮОПХЛЕП ЙПХЯРЮКХВЕЯЙХЕ ЯРЕКШ, ДЕПЕБЭЪ, ПРСРМШЕ НГ╦ПЮ Х НАЗЕЙРШ МЮОНЛХМЮЧЫХЕ ЯКЕДШ ЖХБХКХГЮЖХХ.
+бМСРПЕММХИ ЛХП - ЩРН ЯЕРЭ ОЕЫЕП БМСРПХ ЮЯРЕПНХДНБ, ХГ СМХЙЮКЭМНИ ЯЛЕЯХ НПЦЮМХЙХ Х ЙПЕЛМХЪ. йЮЙ РЮЙНБШУ НРЙПШРШУ БУНДНБ МЕР.]]></Notes>
+		<Goals><![CDATA[фХРЭ, ФПЮРЭ, ЯПЮРЭ]]></Goals>
+	</CHARACTER>
+	<CHARACTER>
+		<ID>2</ID>
+		<Title><![CDATA[дФНМ йЮРХМЦЕЛ]]></Title>
+		<Desc><![CDATA[дЮРЮ ПНФДЕМХЪ: 14 ЛЮПРЮ 213 ЦНДЮ Я М.Й.Щ.(мЮВЮКН ЙНКНМХГЮЖХНММНИ ЩПШ)
+пНЯР: 178 ЯЛ
+бЕЯ: 64 ЙЦ
+цПСООЮ ЙПНБХ: б ОНКНФХРЕКЭМЮЪ
+нОШР: ОНКЕБЮЪ Х ЯРЮЖХНМЮПМЮЪ УХПСПЦХЪ, ЦКСАНЙХЕ ОНГМЮМХЪ Б НАКЮЯРХ МЕИПНАХНКНЦХХ Х ХЛОКЮМРЮРНБ, ЙЮДЕРЯЙЮЪ Х НТХЖЕПЯЙЮЪ БНЕММЮЪ ОНДЦНРНБЙЮ.
+уЮПЮЙРЕПХЯРХЙЮ: СЛ╦М, ЯДЕПФЮМ, ДХЯЖХОКХМХПНБЮМ, ПЮГСЛМНЕ ОПНЪБКЕМХЕ ХМХЖХЮРХБШ. б МЮПСЬЕМХЪУ ГЮЛЕВЕМ МЕ АШК.]]></Desc>
+		<ImageFile><![CDATA[John_Cutingem.gif]]></ImageFile>
+		<Notes><![CDATA[мЕНТХЖХЮКЭМЮЪ УЮПЮЙРЕПХЯРХЙЮ: ЯОНЙНЕМ Х ПЮЯВЕРКХБ, Б ЯБНАНДМНЕ БПЕЛЪ КЧАХРЕКЭ БШОХРЭ Х ОНЙСПХРЭ РПСАЙС, Б ЯКСВЮЕ НРЯСРЯРБХЪ ЯРЮПЬХУ ОН ГБЮМХЧ, ЛНФЕР ОНГБНКХРЭ ЯЕАЕ МЕЙНРНПШЕ БНКЭМНЯРХ. б ДЕКЮУ МЕРНПНОКХБ Х ОПНДСЛШБЮЕР ЙЮФДШИ ЬЮЦ, МН ОПХ МЕНАУНДХЛНЯРХ ЛНФЕР ЛНКМХЕМНЯМН ОПХМХЛЮРЭ ПЕЬЕМХЪ.
+бМЕЬМНЯРЭ: УСДНБЫЮБШИ АПЧМЕР БШЯНЙНЦН ПНЯРЮ, ЙНПНРЙНЯРПХФЕМ, МНЯХР НТХЖЕПЯЙСЧ ТНПЛС ЛЕДХЖХМЯЙНЦН ЙНПОСЯЮ Х АЕПЕР. я ЯНАНИ БЯЕЦДЮ ХЛЕЕР ЯСЛЙС Я МЕНАУНДХЛШЛХ ЛЕДХЖХМЯЙХЛХ ХМЯРПСЛЕМРЮЛХ.]]></Notes>
+		<Bio><![CDATA[нРЯРЮБМНИ НТХЖЕП ЛЕДХЖХМЯЙНЦН ЙНПОСЯЮ. хЛЕЕР СВ╦МСЧ ЯРЕОЕМЭ Б МЕИПНАХНКНЦХХ. б ЛНКНДНЯРХ СВЮЯРБНБЮК Б ХЯКЕДНБЮРЕКЭЯЙН-ЙНКНМХГЮЖХНММНИ ЩЙЯОЕДХЖХХ. рЮЙ ФЕ СВЮЯРБНБЮК Б ОНДЮБКЕМХХ БНЯЯРЮМХИ БН БПЕЛЕМЮ АСМРЮ ЙНКНМХИ БМЕЬМЕЦН ЙНКЭЖЮ.]]></Bio>
+		<FullName><![CDATA[дФНМ йЮРХМЦЕЛ]]></FullName>
+		<Major>-1</Major>
+	</CHARACTER>
+	</CHARACTERS>
+	<PROJECTNOTES>
+	</PROJECTNOTES>
+	<PROJECTVARS>
+	</PROJECTVARS>
+	<PROJECTEXPS>
+	</PROJECTEXPS>
+	<PROJECTBOOKS>
+	</PROJECTBOOKS>
+	<PROJECTPARTS>
+	</PROJECTPARTS>
+	<SCENES>
+	<SCENE>
+		<ID>1</ID>
+		<Title><![CDATA[дЕИЯРБН ОЕПБНЕ: оПХАШРХЕ]]></Title>
+		<Goal><![CDATA[нЯЛНРПЕРЭЯЪ Х СГМЮРЭ ЦДЕ ЦКЮБМШИ ХЯЯКЕДНБЮРЕКЭЯЙХИ ЙНПОСЯ]]></Goal>
+		<RTFFile><![CDATA[RTF_00001.rtf]]></RTFFile>
+		<BelongsToChID>1</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>19</WordCount>
+		<LetterCount>144</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>1</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>2</ID>
+		<Title><![CDATA[дЕИЯРБН БРНПНЕ: оНУНД]]></Title>
+		<Goal><![CDATA[дНАПЮРЭЯЪ ДН НЯМНБМНИ АЮГШ.]]></Goal>
+		<RTFFile><![CDATA[RTF_00002.rtf]]></RTFFile>
+		<BelongsToChID>1</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>23</WordCount>
+		<LetterCount>171</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>4</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>3</ID>
+		<Title><![CDATA[дЕИЯРБН РПЕРЭЕ: мХЙНЦН]]></Title>
+		<Goal><![CDATA[яНАПЮРЭ ДЮММШЕ Н РНЛ ВРН ОПНХГНЬКН.]]></Goal>
+		<RTFFile><![CDATA[RTF_00003.rtf]]></RTFFile>
+		<BelongsToChID>1</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>24</WordCount>
+		<LetterCount>167</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>2</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>4</ID>
+		<Title><![CDATA[дЕИЯРБН ВЕРБ╦ПРНЕ: аЕДЯРБХЕ.]]></Title>
+		<Outcome><![CDATA[бШФХРЭ ХКХ ДНАПЮРЭЯЪ ДН ЙНПЮАКЪ... Х БШФХРЭ)]]></Outcome>
+		<Goal><![CDATA[бШФХРЭ]]></Goal>
+		<Conflict><![CDATA[бЮКХРЭ ХКХ МЕР]]></Conflict>
+		<RTFFile><![CDATA[RTF_00004.rtf]]></RTFFile>
+		<BelongsToChID>1</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<ReactionScene>-1</ReactionScene>
+		<Status>1</Status>
+		<WordCount>39</WordCount>
+		<LetterCount>302</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>2</LocID>
+			<LocID>4</LocID>
+			<LocID>1</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>5</ID>
+		<Title><![CDATA[дЕИЯРБН ОЪРНЕ: вРН ЯКСВХКНЯЭ?]]></Title>
+		<Outcome><![CDATA[мЮКЮДХРЭ ЯБЪГЭ, ДНАПЮРЭЯЪ ДН ДПСЦНИ ХЯЯКЕДНБЮРЕКЭЯЙНИ АЮГШ, ЯБЮКХРЭ]]></Outcome>
+		<Goal><![CDATA[вРН ДЕКЮРЭ ДЮКЭЬЕ]]></Goal>
+		<Conflict><![CDATA[цПСООЮ ГДЕЯЭ ЛНФЕР ПЮГДЕКХРЭЯЪ.]]></Conflict>
+		<RTFFile><![CDATA[RTF_00005.rtf]]></RTFFile>
+		<BelongsToChID>1</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<ReactionScene>-1</ReactionScene>
+		<Status>1</Status>
+		<WordCount>72</WordCount>
+		<LetterCount>550</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>2</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>6</ID>
+		<Title><![CDATA[дЕИЯРБН ЬЕЯРНЕ: юККЕ, ЛЕМЪ ЯКШЬМН]]></Title>
+		<Goal><![CDATA[бНЯЯРЮМНБХРЭ ОХРЮМХЕ, ОНВХМХРЭ РЮВХКС, ЯЦНМЪРЭ ГЮ ЛЮРЕПХЮКЮЛХ, ОНВХМХРЭ ЯБЪГЭ, БШФХРЭ.]]></Goal>
+		<RTFFile><![CDATA[RTF_00006.rtf]]></RTFFile>
+		<BelongsToChID>1</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>100</WordCount>
+		<LetterCount>722</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>2</LocID>
+			<LocID>4</LocID>
+			<LocID>1</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>7</ID>
+		<Title><![CDATA[дЕИЯРБН ЯЕДЭЛНЕ: вРН РЮЛ ГЮ ЦНПХГНМРНЛ]]></Title>
+		<Goal><![CDATA[дНАПЮРЭЯЪ ДН РПЮМЯОНПРМНИ ЯРЮМЖХХ, ОНВХМХРЭ Е╦.]]></Goal>
+		<RTFFile><![CDATA[RTF_00007.rtf]]></RTFFile>
+		<BelongsToChID>2</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>55</WordCount>
+		<LetterCount>332</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+			<LocID>2</LocID>
+			<LocID>6</LocID>
+			<LocID>5</LocID>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>8</ID>
+		<Title><![CDATA[дЕИЯРБН БНЯЭЛНЕ: хМНИ ЛХП]]></Title>
+		<Goal><![CDATA[хЯЯКЕДНБЮРЭ ЙЮЛОСЯ, ДНАПЮРЭЯЪ ДН ХЯЯКЕДНБЮРЕКЭЯЙНИ ОКНЫЮДЙХ.]]></Goal>
+		<RTFFile><![CDATA[RTF_00008.rtf]]></RTFFile>
+		<BelongsToChID>2</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>93</WordCount>
+		<LetterCount>633</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	<SCENE>
+		<ID>9</ID>
+		<Title><![CDATA[дЕИЯРБН ДЕБЪРНЕ: вСДН-ОНКЪМЙЮ]]></Title>
+		<Goal><![CDATA[яНАПЮРЭ ДЮММШЕ, БНИРХ Б УПЮЛ(ДКЪ ЯХКЭМШУ Х МЕГЮБХЯХЛШУ)]]></Goal>
+		<RTFFile><![CDATA[RTF_00009.rtf]]></RTFFile>
+		<BelongsToChID>2</BelongsToChID>
+		<Field1>1</Field1>
+		<Field2>1</Field2>
+		<Field3>1</Field3>
+		<Field4>1</Field4>
+		<Status>1</Status>
+		<WordCount>187</WordCount>
+		<LetterCount>1345</LetterCount>
+		<Characters>
+			<CharID>1</CharID>
+		</Characters>
+		<Locations>
+		</Locations>
+		<Items>
+		</Items>
+	</SCENE>
+	</SCENES>
+	<CHAPTERS>
+	<CHAPTER>
+		<ID>1</ID>
+		<Title><![CDATA[оПХАШРХЕ]]></Title>
+		<Type>0</Type>
+		<Scenes>
+			<ScID>1</ScID>
+			<ScID>2</ScID>
+			<ScID>3</ScID>
+			<ScID>4</ScID>
+			<ScID>5</ScID>
+			<ScID>6</ScID>
+		</Scenes>
+	</CHAPTER>
+	<CHAPTER>
+		<ID>2</ID>
+		<Title><![CDATA[вРН РЮЛ ГЮ ЦЮПХГНМРНЛ?]]></Title>
+		<Type>0</Type>
+		<Scenes>
+			<ScID>7</ScID>
+			<ScID>8</ScID>
+			<ScID>9</ScID>
+		</Scenes>
+	</CHAPTER>
+	</CHAPTERS>
+	<WCLog>
+	<WC>
+		<Date>2017-02-19</Date>
+		<Count>612</Count>
+		<TotalCount>612</TotalCount>
+	</WC>
+	</WCLog>
+</YWRITER5>
