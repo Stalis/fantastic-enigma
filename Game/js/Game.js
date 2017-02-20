@@ -22,9 +22,12 @@ function create() {
     //=                   INITIALIZE                       =
     //======================================================
     var sceneBehind = game.add.sprite(0, 0,'sceneBehind');
+
     sceneMask = game.add.bitmapData(640, 400);
     sceneMask.draw('sceneMask');
+
     player = game.add.sprite(320, 200, 'John');
+
     var sceneFront = game.add.sprite(0, 0,'sceneFront');
 
     //======================================================
