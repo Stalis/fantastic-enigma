@@ -2,40 +2,75 @@ var game = new Phaser.Game(640, 400, Phaser.AUTO, '', {preload: preload, create:
 
 // loading assets
 function preload() {
-    game.load.image('background', "assets/Maps/Scene.png");
+    game.load.image('sceneMask', "assets/Maps/TestScene/Scene_Mask.png");
+    game.load.image('sceneFront', "assets/Maps/TestScene/Scene_Front.png");
+    game.load.image('sceneBehind', "assets/Maps/TestScene/Scene_Behind.png");
+
     game.load.spritesheet('John', "assets/Characters/John_Cutingem.png", 37, 55);
 }
 
 // global variables
 var player;
 var cursors;
-
+var sceneMask;
 // Initialization
 function create() {
     // adding physics for controlling characters
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    // add background sprite
-    var background = game.add.sprite(0, 0,'background');
+    //======================================================
+    //=                   INITIALIZE                       =
+    //======================================================
+    var sceneBehind = game.add.sprite(0, 0,'sceneBehind');
+    sceneMask = game.add.bitmapData(640, 400);
+    sceneMask.draw('sceneMask');
+    player = game.add.sprite(320, 200, 'John');
+    var sceneFront = game.add.sprite(0, 0,'sceneFront');
 
-    // add player sprite
-    player = game.add.sprite(37, 37, 'John');
+    //======================================================
+    //=                   BACKGROUND                       =
+    //======================================================
+    // setup properties
+    //game.physics.arcade.enable(sceneMask);
+    //sceneMask.enableBody = true;
+    //sceneMask.body.immovable = true;
+    //sceneMask.body.collidable = true;
 
+    //sceneMask.scale.setTo(2);
+    sceneMask.update();
+    sceneMask.addToWorld();
+    // scaling
+    //sceneMask.scale.setTo(2);
+    sceneFront.scale.setTo(2);
+    sceneBehind.scale.setTo(2);
+
+    //======================================================
+    //=                   CHARACTERS                       =
+    //======================================================
+    // setup animations
     player.animations.add('idle', range(12), 6, true);
     // add physics to it
     game.physics.arcade.enable(player);
-    player.enableBody = true;
 
-    // scaling sprites
-    background.scale.setTo(2);
+    player.enableBody = true;
+    player.body.gravity.y = 10;
+    player.body.gravity.x = 10;
+    player.body.collideWorldBounds = true;
+    // scaling
     player.scale.setTo(2);
 
+    //======================================================
+    //=                    CONTROLS                        =
+    //======================================================
     // initialize control with cursor keys
     cursors = game.input.keyboard.createCursorKeys();
 }
 
 // on update running  function
 function update() {
+    game.physics.arcade.collide(player, sceneMask);
+    var hitMask = game.physics.arcade.overlap(player, sceneMask);
+    console.log(hitMask);
     // stop player
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
@@ -65,5 +100,5 @@ function update() {
 // function for getting [0..x] array
 function range(x)
 {
-    return Array.apply(null, Array(x)).map(function(_,i) {return i;});
+    return Array.apply(null, new Array(x)).map(function(_,i) {return i;});
 }
