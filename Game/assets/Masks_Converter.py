@@ -14,12 +14,12 @@ def makeTilemap(folderName):
     tMap = list()
 
     factor = 129
-    for i in range(width):
+    for i in range(height):
         row = list()
-        for j in range(height):
-            p = image.getpixel((i,j))
+        for j in range(width):
+            p = image.getpixel((j,i))
             if p < factor:
-                image.putpixel((i,j),0)
+                image.putpixel((j,i),0)
                 row.append(0)
             else:
                 row.append(1)
@@ -43,12 +43,12 @@ for scene in folders:
         try:
             makeTilemap(scene)
         except:
-            print("Error!")
-            
+            print("Error!")            
         else:
             print("Done!")
+#        tileset = Image.new('L',(1,2))
 
-tileset = Image.new('L',(1,2))
+tileset = Image.new('L', (1,2))        
 tileset.format = 'PNG'
 tileset.putpixel((0,0),0)
 tileset.putpixel((0,1),129)
