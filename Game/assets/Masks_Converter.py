@@ -1,3 +1,4 @@
+#!/bin/python3
 from PIL import Image, ImageDraw
 import os, sys
 
@@ -22,7 +23,7 @@ def makeTilemap(folderName):
                 image.putpixel((j,i),0)
                 row.append(0)
             else:
-                row.append(1)
+                row.append(-1)
         tMap.append(row)
 
     sMap = ''
@@ -46,7 +47,6 @@ for scene in folders:
             print("Error!")            
         else:
             print("Done!")
-#        tileset = Image.new('L',(1,2))
 
 tileset = Image.new('L', (1,2))        
 tileset.format = 'PNG'
