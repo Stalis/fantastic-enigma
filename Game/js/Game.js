@@ -9,7 +9,9 @@ function preload() {
     game.load.image('sceneBehind', "assets/Maps/TestScene/Scene_Behind.png");
 
     game.load.spritesheet('John', "assets/Characters/John_Cutingem.png", 37, 55);
-
+	
+	game.load.image('HUD', "assets/etc/HUD-0001.png");
+	game.load.spritesheet('button0', "assets/etc/Button_Pause.png", 20, 20);
 }
 
 // global variables
@@ -18,6 +20,7 @@ var debugText;
 var cursors;
 var sceneMask;
 var maskLayer;
+var button
 // Initialization
 function create() {
     // adding physics for controlling characters
@@ -31,6 +34,9 @@ function create() {
     player = game.add.sprite(320, 200, 'John');
 
     var sceneFront = game.add.sprite(0, 0,'sceneFront');
+	
+	var HUD = game.add.sprite(0,0, 'HUD');
+	button = game.add.button(game.world.width - 28, 2, 'button0', showMenu, this, 1, 0, 0);
 
     // setup properties
     maskLayer.resizeWorld();
@@ -92,6 +98,10 @@ function update() {
 
 function render() {
     game.debug.body(player);
+}
+
+function showMenu(){
+	console.log('Pause button pressed');
 }
 
 // function for getting [0..x] array
