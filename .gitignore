@@ -4,3 +4,5 @@ quest/\.idea/
 quest/js/assets/
 
 Game/deploy\.sh
+
+Game/undeploy\.sh

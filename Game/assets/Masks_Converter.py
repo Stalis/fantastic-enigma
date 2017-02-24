@@ -1,19 +1,21 @@
-#!/bin/python3
+#!/usr/bin/python3
 from PIL import Image, ImageDraw
 import os, sys
 
 def makeTilemap(folderName):
     inFile = "Maps/" + folderName + "/Scene_Mask.png"
     outFile = "Maps/" + folderName + "/Scene_Mask.csv"
-
     
-    image = Image.open(inFile)
-    draw = ImageDraw.Draw(image)
-    width = image.size[0]
-    height = image.size[1]
-
+    try:
+        image = Image.open(inFile)
+        draw = ImageDraw.Draw(image)
+        width = image.size[0]
+        height = image.size[1]
+    except IOError:
+        print('Cannot open!')
+        
     tMap = list()
-
+    
     factor = 129
     for i in range(height):
         row = list()
@@ -30,10 +32,13 @@ def makeTilemap(folderName):
     for row in tMap:
         sMap += ','.join(str(x) for x in row)
         sMap += '\n'
-        
-    with open(outFile, 'w') as f:
-        f.write(sMap)
-        f.close()
+
+    try:
+        with open(outFile, 'w') as f:
+            f.write(sMap)
+            f.close()
+    except IOError:
+        print('Cannot write!')
 
 directory = os.getcwd() + "/Maps"
 folders = os.listdir(directory)
@@ -43,8 +48,11 @@ for scene in folders:
         print(scene + "...", end='')
         try:
             makeTilemap(scene)
+        except TypeError as inst:
+            print('TypeError!')
+            print(inst.args)
         except:
-            print("Error!")            
+            print("Error!", sys.exc_info()[0])            
         else:
             print("Done!")
 
