@@ -47,11 +47,17 @@ function create() {
 
     var sceneFront = game.add.sprite(0, 0,'sceneFront');
 
-	pdaButton = game.add.button(game.world.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
+	pdaButton = game.add.button(game.camera.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
 	charButton = game.add.button(0,0, 'charButton', showCharMenu, this, 0, 1, 2, 3);
 	var JohnIcon = game.add.sprite(0,0, 'JohnIcon');
 	heartbeat = game.add.sprite(16, 0, 'heartbeat');
-	var itemPanel = game.add.sprite(game.world.width - 32, 64, 'itemPanel');
+	var itemPanel = game.add.sprite(game.camera.width - 32, 64, 'itemPanel');
+    pdaButton.fixedToCamera = true;
+    charButton.fixedToCamera = true;
+    JohnIcon.fixedToCamera = true;
+    heartbeat.fixedToCamera = true;
+    itemPanel.fixedToCamera = true;
+
     // setup properties
     maskLayer.resizeWorld();
     sceneMask.setCollision(0);
