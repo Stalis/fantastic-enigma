@@ -11,8 +11,10 @@ function preload() {
     game.load.spritesheet('John', "assets/Characters/John_Cutingem.png", 37, 55);
     game.load.image('JohnIcon', "assets/Characters/John_Cutingem_icon.png");
 
-	game.load.image('HUD', "assets/etc/HUD-0003.png");
 	game.load.spritesheet('PDA', "assets/etc/PDA_Button.png", 96, 32);
+	game.load.spritesheet('charButton', "assets/etc/Char_Button.png", 96, 32);
+	game.load.spritesheet('heartbeat', "assets/etc/Heartbeat-0003.png", 96, 32);
+	game.load.image('itemPanel', "assets/etc/ItemPanel.png");
 }
 
 // global variables
@@ -20,7 +22,11 @@ var player;
 var cursors;
 var sceneMask;
 var maskLayer;
-var button;
+
+var pdaButton;
+var charButton;
+var heartbeat;
+
 // Initialization
 function create() {
     // adding physics for controlling characters
@@ -34,17 +40,19 @@ function create() {
     player = game.add.sprite(320, 200, 'John');
 
     var sceneFront = game.add.sprite(0, 0,'sceneFront');
-	
-	var HUD = game.add.sprite(0,0, 'HUD');
-	buttonPDA = game.add.button(game.world.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
 
+	pdaButton = game.add.button(game.world.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
+	charButton = game.add.button(0,0, 'charButton', showCharMenu, this, 0, 1, 2, 3);
+	var JohnIcon = game.add.sprite(0,0, 'JohnIcon');
+	heartbeat = game.add.sprite(16, 0, 'heartbeat');
+	var itemPanel = game.add.sprite(game.world.width - 32, 64, 'itemPanel');
     // setup properties
     maskLayer.resizeWorld();
     sceneMask.setCollision(0);
-    maskLayer.debug = true;
 
     // setup animations
     player.animations.add('idle', range(12), 6, true);
+    heartbeat.animations.add('default', range(63), 24, true);
     // add physics to it
     game.physics.arcade.enable(player);
 
@@ -75,6 +83,7 @@ function update() {
     player.body.velocity.y = 0;
 
     player.animations.play('idle');
+    heartbeat.animations.play('default');
 
     // checking pushed keys
     // when some navigation keys are pushed, go player to some direction
@@ -97,11 +106,15 @@ function update() {
 }
 
 function render() {
-    game.debug.body(player);
+    //game.debug.body(player);
 }
 
 function showMenu(){
 	console.log('Pause button pressed');
+}
+
+function showCharMenu() {
+    console.log('Character button pressed');
 }
 
 // function for getting [0..x] array
