@@ -9,18 +9,18 @@ function preload() {
     game.load.image('sceneBehind', "assets/Maps/TestScene/Scene_Behind.png");
 
     game.load.spritesheet('John', "assets/Characters/John_Cutingem.png", 37, 55);
-	
-	game.load.image('HUD', "assets/etc/HUD-0001.png");
-	game.load.spritesheet('button0', "assets/etc/Button_Pause.png", 20, 20);
+    game.load.image('JohnIcon', "assets/Characters/John_Cutingem_icon.png");
+
+	game.load.image('HUD', "assets/etc/HUD-0003.png");
+	game.load.spritesheet('PDA', "assets/etc/PDA_Button.png", 96, 32);
 }
 
 // global variables
 var player;
-var debugText;
 var cursors;
 var sceneMask;
 var maskLayer;
-var button
+var button;
 // Initialization
 function create() {
     // adding physics for controlling characters
@@ -36,7 +36,7 @@ function create() {
     var sceneFront = game.add.sprite(0, 0,'sceneFront');
 	
 	var HUD = game.add.sprite(0,0, 'HUD');
-	button = game.add.button(game.world.width - 28, 2, 'button0', showMenu, this, 1, 0, 0);
+	buttonPDA = game.add.button(game.world.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
 
     // setup properties
     maskLayer.resizeWorld();
