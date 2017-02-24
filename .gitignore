@@ -5,6 +5,4 @@ quest/js/assets/
 
 Game/deploy\.sh
 
-Game/undeploy\.sh
-
 *.ase
