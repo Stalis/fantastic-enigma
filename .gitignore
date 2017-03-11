@@ -9,3 +9,5 @@ Game/deploy\.sh
 Game/undeploy\.sh
 
 *.pes
+
+Game/\.idea/
