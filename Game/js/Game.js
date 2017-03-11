@@ -1,4 +1,4 @@
-var game = new Phaser.Game(640, 400, Phaser.Canvas, '', {preload: preload, create:create, update: update, render: render});
+var game = new Phaser.Game(640, 400, Phaser.Canvas, '', { preload: preload, create: create, update: update, render: render });
 
 // loading assets
 function preload() {
@@ -7,20 +7,25 @@ function preload() {
     game.load.image('sceneMask1', "assets/Maps/TestScene1/Scene_Mask1.png");
     game.load.physics('physicsData', "assets/Maps/TestScene1/Scene_Mask.json");
 
-
     game.load.spritesheet('John', "assets/Characters/John_Cutingem.png", 37, 55);
     game.load.image('JohnIcon', "assets/Characters/John_Cutingem_icon.png");
 
-	game.load.spritesheet('PDA', "assets/etc/PDA_Button.png", 96, 32);
-	game.load.spritesheet('charButton', "assets/etc/Char_Button.png", 96, 32);
-	game.load.spritesheet('heartbeat', "assets/etc/Heartbeat-0003.png", 96, 32);
-	game.load.image('itemPanel', "assets/etc/ItemPanel.png");
+    game.load.spritesheet('Holotable', "assets/etc/Holotable.png", 64, 64);
+    game.load.spritesheet('PlasmaCutter', "assets/etc/Plasma_Cutter.png", 64, 64);
+
+    game.load.spritesheet('PDA', "assets/etc/PDA_Button.png", 96, 32);
+    game.load.spritesheet('charButton', "assets/etc/Char_Button.png", 96, 32);
+    game.load.spritesheet('heartbeat', "assets/etc/Heartbeat-0003.png", 96, 32);
+    game.load.image('itemPanel', "assets/etc/ItemPanel.png");
 }
 
 // global variables
 var player;
 var cursors;
 var sceneMask;
+
+var holotable;
+var plasmaCutter;
 
 var pdaButton;
 var charButton;
@@ -83,11 +88,12 @@ function create() {
     //======================================================
     //=                       HUD                          =
     //======================================================
-	pdaButton = game.add.button(game.camera.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
-	charButton = game.add.button(0,0, 'charButton', showCharMenu, this, 0, 1, 2, 3);
+    pdaButton = game.add.button(game.camera.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
+    charButton = game.add.button(0,0, 'charButton', showCharMenu, this, 0, 1, 2, 3);
 	var JohnIcon = game.add.sprite(0,0, 'JohnIcon');
 	heartbeat = game.add.sprite(16, 0, 'heartbeat');
 	var itemPanel = game.add.sprite(game.camera.width - 32, 64, 'itemPanel');
+
     pdaButton.fixedToCamera = true;
     charButton.fixedToCamera = true;
     JohnIcon.fixedToCamera = true;
@@ -95,6 +101,24 @@ function create() {
     itemPanel.fixedToCamera = true;
 
     heartbeat.animations.add('default', range(63), 24, true);
+
+    //======================================================
+    //=                      ITEMS                         =
+    //======================================================
+    holotable = game.add.sprite(itemPanel.x, itemPanel.y, 'Holotable');
+    plasmaCutter = game.add.sprite(itemPanel.x, itemPanel.y + 32, 'PlasmaCutter');
+
+    holotable.fixedToCamera = true;
+    plasmaCutter.fixedToCamera = true;
+
+    holotable.scale.setTo(0.5);
+    plasmaCutter.scale.setTo(0.5);
+
+    holotable.animations.add('onMouse', range(83), false);
+    plasmaCutter.animations.add('onMouse', range(18), false);
+
+    holotable.inputEnabled = true;
+    plasmaCutter.inputEnabled = true;
 
 
     //======================================================
@@ -109,6 +133,24 @@ function create() {
 // on update running  function
 function update() {
 
+    if (holotable.input.pointerOver())
+    {
+        holotable.animations.play('onMouse');
+    }
+    else
+    {
+        holotable.animations.stop(null, true);
+    }
+
+    if (plasmaCutter.input.pointerOver())
+    {
+        plasmaCutter.animations.play('onMouse');
+    }
+    else
+    {
+        plasmaCutter.animations.stop(null, true);
+    }
+
     // stop player
     player.body.setZeroVelocity();
 
@@ -117,20 +159,16 @@ function update() {
 
     // checking pushed keys
     // when some navigation keys are pushed, go player to some direction
-    if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.KeyCode.A))
-    {
+    if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.KeyCode.A)) {
         player.body.moveLeft(100);
     }
-    if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.KeyCode.D))
-    {
+    if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.KeyCode.D)) {
         player.body.moveRight(100);
     }
-    if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.KeyCode.S))
-    {
+    if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.KeyCode.S)) {
         player.body.moveDown(100);
     }
-    if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.KeyCode.W))
-    {
+    if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.KeyCode.W)) {
         player.body.moveUp(100);
     }
 }
@@ -142,8 +180,9 @@ function render() {
     //game.debug.spriteInfo(player, 280, 46);
 }
 
-function showMenu(){
-	console.log('Pause button pressed');
+
+function showMenu() {
+    console.log('Pause button pressed');
 }
 
 function showCharMenu() {
@@ -151,7 +190,6 @@ function showCharMenu() {
 }
 
 // function for getting [0..x] array
-function range(x)
-{
-    return Array.apply(null, new Array(x)).map(function(_,i) {return i;});
+function range(x) {
+    return Array.apply(null, new Array(x)).map(function (_, i) { return i; });
 }
