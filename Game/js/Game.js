@@ -1,101 +1,195 @@
-var game = new Phaser.Game(640, 400, Phaser.AUTO, '', {preload: preload, create:create, update: update, render: render});
+var game = new Phaser.Game(640, 400, Phaser.Canvas, '', { preload: preload, create: create, update: update, render: render });
 
 // loading assets
 function preload() {
-    game.load.tilemap('sceneMask', "assets/Maps/TestScene/Scene_Mask.csv", null);
-    game.load.image('maskTiles', "assets/Maps/TileSet.png");
-
-    game.load.image('sceneFront', "assets/Maps/TestScene/Scene_Front.png");
-    game.load.image('sceneBehind', "assets/Maps/TestScene/Scene_Behind.png");
+    game.load.image('sceneBackground', "assets/Maps/TestScene1/Scene.png");
+    game.load.image('sceneMask0', "assets/Maps/TestScene1/Scene_Mask0.png");
+    game.load.image('sceneMask1', "assets/Maps/TestScene1/Scene_Mask1.png");
+    game.load.physics('physicsData', "assets/Maps/TestScene1/Scene_Mask.json");
 
     game.load.spritesheet('John', "assets/Characters/John_Cutingem.png", 37, 55);
+    game.load.image('JohnIcon', "assets/Characters/John_Cutingem_icon.png");
 
+    game.load.spritesheet('Holotable', "assets/etc/Holotable.png", 64, 64);
+    game.load.spritesheet('PlasmaCutter', "assets/etc/Plasma_Cutter.png", 64, 64);
+
+    game.load.spritesheet('PDA', "assets/etc/PDA_Button.png", 96, 32);
+    game.load.spritesheet('charButton', "assets/etc/Char_Button.png", 96, 32);
+    game.load.spritesheet('heartbeat', "assets/etc/Heartbeat-0003.png", 96, 32);
+    game.load.image('itemPanel', "assets/etc/ItemPanel.png");
 }
 
 // global variables
 var player;
-var debugText;
 var cursors;
 var sceneMask;
-var maskLayer;
+
+var holotable;
+var plasmaCutter;
+
+var pdaButton;
+var charButton;
+var heartbeat;
+
 // Initialization
 function create() {
-    // adding physics for controlling characters
-    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.physics.startSystem(Phaser.Physics.P2JS);
+    game.physics.p2.setImpactEvents(true);
 
-    sceneMask = game.add.tilemap('sceneMask', 1, 1);
-    maskLayer = sceneMask.createLayer(0);
-    maskLayer.visible = false;
+    //======================================================
+    //=                   BACKGROUND                       =
+    //======================================================
+    game.add.tileSprite(0, 0, 1920, 1200, 'sceneBackground');
+    game.world.setBounds(0, 0, 1920, 1200);
 
-    var sceneBehind = game.add.sprite(0, 0,'sceneBehind');
-    player = game.add.sprite(320, 200, 'John');
+    //======================================================
+    //=                  COLLIDE MASKS                     =
+    //======================================================
+    sceneMask = game.add.group();
 
-    var sceneFront = game.add.sprite(0, 0,'sceneFront');
+    var sceneMask0 = sceneMask.create(game.world.width / 2, game.world.height / 2, 'sceneMask0');
+    game.physics.p2.enable(sceneMask0);
+    sceneMask0.body.clearShapes();
+    sceneMask0.body.loadPolygon('physicsData', 'Scene_Mask0');
+    sceneMask0.body.static = true;
+    sceneMask0.visible = false;
 
-    // setup properties
-    maskLayer.resizeWorld();
-    sceneMask.setCollision(0);
-    maskLayer.debug = true;
+    var sceneMask1 = sceneMask.create(game.world.width / 2, game.world.height / 2, 'sceneMask1');
+    game.physics.p2.enable(sceneMask1);
+    sceneMask1.body.clearShapes();
+    sceneMask1.body.loadPolygon('physicsData', 'Scene_Mask1');
+    sceneMask1.body.static = true;
+    sceneMask1.visible = false;
 
-    // setup animations
+    //======================================================
+    //=                   CHARACTERS                       =
+    //======================================================
+    player = game.add.sprite(600, 320, 'John');
     player.animations.add('idle', range(12), 6, true);
-    // add physics to it
-    game.physics.arcade.enable(player);
-
+    game.physics.p2.enable(player);
     player.enableBody = true;
 
     player.body.collideWorldBounds = true;
-    player.body.setSize(Math.floor(player.width / 1.5), Math.floor(player.height / 10), 0, player.height - Math.floor(player.height / 10));
-    // scaling
+    player.body.setZeroDamping();
+    player.body.fixedRotation = true;
+
     player.scale.setTo(2);
 
-    sceneFront.scale.setTo(2);
-    sceneBehind.scale.setTo(2);
+    player.body.setRectangle(
+        Math.floor(player.width / 1.5),
+        Math.floor(player.height / 11),
+        (- Math.floor(player.width / 4)),
+        Math.floor((player.height - Math.floor(player.height / 11)) / 2));
+    //======================================================
+    //=                     OBJECTS                        =
+    //======================================================
+    //var sceneFront = game.add.sprite(0, 0,'sceneFront');
+
+    //======================================================
+    //=                       HUD                          =
+    //======================================================
+    pdaButton = game.add.button(game.camera.width - 96, 0, 'PDA', showMenu, this, 0, 1, 2, 3);
+    charButton = game.add.button(0,0, 'charButton', showCharMenu, this, 0, 1, 2, 3);
+	var JohnIcon = game.add.sprite(0,0, 'JohnIcon');
+	heartbeat = game.add.sprite(16, 0, 'heartbeat');
+	var itemPanel = game.add.sprite(game.camera.width - 32, 64, 'itemPanel');
+
+    pdaButton.fixedToCamera = true;
+    charButton.fixedToCamera = true;
+    JohnIcon.fixedToCamera = true;
+    heartbeat.fixedToCamera = true;
+    itemPanel.fixedToCamera = true;
+
+    heartbeat.animations.add('default', range(63), 24, true);
+
+    //======================================================
+    //=                      ITEMS                         =
+    //======================================================
+    holotable = game.add.sprite(itemPanel.x, itemPanel.y, 'Holotable');
+    plasmaCutter = game.add.sprite(itemPanel.x, itemPanel.y + 32, 'PlasmaCutter');
+
+    holotable.fixedToCamera = true;
+    plasmaCutter.fixedToCamera = true;
+
+    holotable.scale.setTo(0.5);
+    plasmaCutter.scale.setTo(0.5);
+
+    holotable.animations.add('onMouse', range(83), false);
+    plasmaCutter.animations.add('onMouse', range(18), false);
+
+    holotable.inputEnabled = true;
+    plasmaCutter.inputEnabled = true;
+
 
     //======================================================
     //=                    CONTROLS                        =
     //======================================================
     // initialize control with cursor keys
     cursors = game.input.keyboard.createCursorKeys();
+
+    game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON);
 }
 
 // on update running  function
 function update() {
 
-    var coll = game.physics.arcade.collide(player, maskLayer);
+    if (holotable.input.pointerOver())
+    {
+        holotable.animations.play('onMouse');
+    }
+    else
+    {
+        holotable.animations.stop(null, true);
+    }
+
+    if (plasmaCutter.input.pointerOver())
+    {
+        plasmaCutter.animations.play('onMouse');
+    }
+    else
+    {
+        plasmaCutter.animations.stop(null, true);
+    }
 
     // stop player
-    player.body.velocity.x = 0;
-    player.body.velocity.y = 0;
+    player.body.setZeroVelocity();
 
     player.animations.play('idle');
+    heartbeat.animations.play('default');
 
     // checking pushed keys
     // when some navigation keys are pushed, go player to some direction
-    if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.KeyCode.A))
-    {
-        player.body.velocity.x = -100;
+    if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.KeyCode.A)) {
+        player.body.moveLeft(100);
     }
-    if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.KeyCode.D))
-    {
-        player.body.velocity.x = 100;
+    if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.KeyCode.D)) {
+        player.body.moveRight(100);
     }
-    if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.KeyCode.S))
-    {
-        player.body.velocity.y = 100;
+    if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.KeyCode.S)) {
+        player.body.moveDown(100);
     }
-    if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.KeyCode.W))
-    {
-        player.body.velocity.y = -100;
+    if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.KeyCode.W)) {
+        player.body.moveUp(100);
     }
 }
 
 function render() {
-    game.debug.body(player);
+    //game.debug.body(player);
+    //game.debug.cameraInfo(game.camera, 16, 46);
+    //game.debug.spriteCoords(player, 16, 350);
+    //game.debug.spriteInfo(player, 280, 46);
+}
+
+
+function showMenu() {
+    console.log('Pause button pressed');
+}
+
+function showCharMenu() {
+    console.log('Character button pressed');
 }
 
 // function for getting [0..x] array
-function range(x)
-{
-    return Array.apply(null, new Array(x)).map(function(_,i) {return i;});
+function range(x) {
+    return Array.apply(null, new Array(x)).map(function (_, i) { return i; });
 }
