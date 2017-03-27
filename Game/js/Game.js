@@ -1,4 +1,8 @@
-var game = new Phaser.Game(640, 400, Phaser.Canvas, '', {preload: preload, create:create, update: update, render: render});
+var exit = function(){
+    window.location.href= "http://google.com";
+}
+
+var game = new Phaser.Game(640, 400, Phaser.Canvas, 'wrap', {preload: preload, create:create, update: update, render: render});
 
 // loading assets
 function preload() {
