@@ -11,3 +11,9 @@ Game/undeploy\.sh
 *.pes
 
 Game/\.idea/
+
+Game/assets/etc/Thumbs\.db
+
+Game/assets/Characters/Thumbs\.db
+
+Game/assets/Maps/Thumbs\.db
