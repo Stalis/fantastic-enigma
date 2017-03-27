@@ -4,7 +4,8 @@
         "outFile": "js/app.js",
         "sourceMap": true,
         "module": "commonjs",
-        "target": "es5"
+        "target": "es5",
+        "removeComments": false
     },
     "include": [
         "typescript/*.*"
