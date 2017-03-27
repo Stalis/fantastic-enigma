@@ -16,8 +16,11 @@ function preload() {
     game.load.image('JohnIcon', "assets/Characters/John_Cutingem_icon.png");
 
 	game.load.spritesheet('PDA', "assets/etc/PDA_Button.png", 96, 32);
+
 	game.load.spritesheet('charButton', "assets/etc/Char_Button.png", 96, 32);
 	game.load.spritesheet('heartbeat', "assets/etc/Heartbeat-0003.png", 96, 32);
+    
+    game.load.image('PDA_GUI', "assets/images/gfx_pda.png");
 	game.load.image('itemPanel', "assets/etc/ItemPanel.png");
 }
 
@@ -29,6 +32,7 @@ var sceneMask;
 var pdaButton;
 var charButton;
 var heartbeat;
+var PDA_GUI;
 
 // Initialization
 function create() {
@@ -92,6 +96,14 @@ function create() {
 	var JohnIcon = game.add.sprite(0,0, 'JohnIcon');
 	heartbeat = game.add.sprite(16, 0, 'heartbeat');
 	var itemPanel = game.add.sprite(game.camera.width - 32, 64, 'itemPanel');
+    
+	PDA_GUI = game.add.sprite( game.camera.width*0.5, game.camera.height*0.5, 'PDA_GUI');
+    PDA_GUI.fixedToCamera = true;
+    PDA_GUI.anchor.setTo(0.5);
+    PDA_GUI.scale.setTo(0.5);
+    PDA_GUI.alpha = 0;
+    
+    
     pdaButton.fixedToCamera = true;
     charButton.fixedToCamera = true;
     JohnIcon.fixedToCamera = true;
@@ -148,6 +160,7 @@ function render() {
 
 function showMenu(){
 	console.log('Pause button pressed');
+    PDA_GUI.alpha = 1 - PDA_GUI.alpha;
 }
 
 function showCharMenu() {
