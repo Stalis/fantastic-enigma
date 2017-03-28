@@ -1,4 +1,3 @@
-// Base states of parts of char
 var OState;
 (function (OState) {
     OState[OState["Default"] = 0] = "Default";
@@ -7,7 +6,6 @@ var OState;
     OState[OState["Hard"] = 3] = "Hard";
     OState[OState["Out"] = 4] = "Out";
 })(OState || (OState = {}));
-// Struct w/ states of char
 var CharacterState = (function () {
     function CharacterState() {
         this.arms = OState.Default;
@@ -20,20 +18,17 @@ var CharacterState = (function () {
     }
     return CharacterState;
 }());
-// Class w/ Role Playing part of char
 var RPChar = (function () {
     function RPChar() {
     }
     return RPChar;
 }());
-// Base class of character
 var Character = (function () {
     function Character(name) {
         this.name = name;
     }
     return Character;
 }());
-// Base class for items
 var Item = (function () {
     function Item() {
     }
@@ -44,17 +39,9 @@ var loadScreen = (function () {
     }
     return loadScreen;
 }());
-/**
- * Created by Stalis on 07.03.2017.
- */
-/// <reference path="phaser.d.ts"/>
-/// <reference path="Lib/character.ts"/>
-/// <reference path="Lib/item.ts"/>
-/// <reference path="Lib/GameStates/loadscreen.ts"/>
 function exit() {
     window.location.href = "http://google.com";
 }
-// Default game state class
 var Quest = (function () {
     function Quest() {
         this.game = new Phaser.Game(640, 400, Phaser.AUTO, 'wrap', {
@@ -72,7 +59,6 @@ var Quest = (function () {
     };
     return Quest;
 }());
-// Main function
 window.onload = function () {
     var game = new Quest();
 };
