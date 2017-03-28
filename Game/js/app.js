@@ -1,25 +1,3 @@
-/**
- * Created by Stalis on 07.03.2017.
- */
-/// <reference path="phaser.d.ts"/>
-// Default game state class
-var Quest = (function () {
-    function Quest() {
-        this.game = new Phaser.Game(640, 400, Phaser.AUTO, 'content', {
-            preload: this.preload,
-            create: this.create
-        });
-    }
-    Quest.prototype.preload = function () {
-        this.game.load.image('Scene1', "assets/Maps/TestScene/Scene_Behind.png");
-    };
-    Quest.prototype.create = function () {
-        var bg = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'Scene1');
-        bg.anchor.setTo(0.5, 0.5);
-        bg.scale.setTo(2);
-    };
-    return Quest;
-}());
 // Base states of parts of char
 var OState;
 (function (OState) {
@@ -48,12 +26,6 @@ var RPChar = (function () {
     }
     return RPChar;
 }());
-// Base class for items
-var Item = (function () {
-    function Item() {
-    }
-    return Item;
-}());
 // Base class of character
 var Character = (function () {
     function Character(name) {
@@ -61,11 +33,44 @@ var Character = (function () {
     }
     return Character;
 }());
-// Base class for HUD
-var HUD = (function () {
-    function HUD() {
+// Base class for items
+var Item = (function () {
+    function Item() {
     }
-    return HUD;
+    return Item;
+}());
+var loadScreen = (function () {
+    function loadScreen() {
+    }
+    return loadScreen;
+}());
+/**
+ * Created by Stalis on 07.03.2017.
+ */
+/// <reference path="phaser.d.ts"/>
+/// <reference path="Lib/character.ts"/>
+/// <reference path="Lib/item.ts"/>
+/// <reference path="Lib/GameStates/loadscreen.ts"/>
+function exit() {
+    window.location.href = "http://google.com";
+}
+// Default game state class
+var Quest = (function () {
+    function Quest() {
+        this.game = new Phaser.Game(640, 400, Phaser.AUTO, 'wrap', {
+            preload: this.preload,
+            create: this.create
+        });
+    }
+    Quest.prototype.preload = function () {
+        this.game.load.image('Scene1', "assets/Maps/TestScene/Scene_Behind.png");
+    };
+    Quest.prototype.create = function () {
+        var bg = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'Scene1');
+        bg.anchor.setTo(0.5, 0.5);
+        bg.scale.setTo(2);
+    };
+    return Quest;
 }());
 // Main function
 window.onload = function () {
