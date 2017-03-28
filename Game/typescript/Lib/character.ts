@@ -26,8 +26,6 @@ class RPChar
 
 }
 
-
-
 // Base class of character
 class Character
 {
