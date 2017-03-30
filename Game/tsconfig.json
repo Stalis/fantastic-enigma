@@ -1,0 +1,18 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outFile": "js/app.js",
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es5",
+        "removeComments": true
+    },
+    "include": [
+        "typescript/*.*"
+    ],
+    "exclude": [
+        "typescript/p2.d.ts",
+        "typescript/phaser.d.ts",
+        "typescript/pixi.d.ts"
+    ]
+}

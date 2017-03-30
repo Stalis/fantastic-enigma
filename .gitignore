@@ -1,11 +1,9 @@
-
-quest/\.idea/
-
-quest/js/assets/
-
 Game/deploy\.sh
 
 *.ase
 Game/undeploy\.sh
 
 *.pes
+
+Game/\.idea/
+Game/\.vscode/
