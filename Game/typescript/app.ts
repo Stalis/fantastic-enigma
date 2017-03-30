@@ -5,6 +5,7 @@
 /// <reference path="Lib/character.ts"/>
 /// <reference path="Lib/item.ts"/>
 /// <reference path="Lib/GameStates/loadscreen.ts"/>
+/// <reference path="Lib/GameStates/mainmenu.ts"/>
 
 function exit()
 {
@@ -27,16 +28,25 @@ class Quest
 
     game: Phaser.Game;
 
-    preload()
+    loadScreenState: loadScreen;
+    mainMenuState:   MainMenu;
+
+    preload(): void
     {
         this.game.load.image('Scene1', "assets/Maps/TestScene/Scene_Behind.png");
     }
 
-    create()
+    create(): void
     {
+        this.loadScreenState = new loadScreen();
+        this.mainMenuState = new MainMenu();
+
         var bg = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'Scene1');
         bg.anchor.setTo(0.5, 0.5);
         bg.scale.setTo(2);
+
+        this.game.state.add('loadscreen', this.loadScreenState);
+        this.game.state.add('MainMenu', this.mainMenuState);
     }
 }
 

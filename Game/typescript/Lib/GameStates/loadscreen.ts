@@ -1,5 +1,4 @@
-
-class loadScreen
+class loadScreen extends Phaser.State
 {
     
 }

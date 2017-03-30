@@ -1,3 +1,13 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var OState;
 (function (OState) {
     OState[OState["Default"] = 0] = "Default";
@@ -34,11 +44,26 @@ var Item = (function () {
     }
     return Item;
 }());
-var loadScreen = (function () {
+var loadScreen = (function (_super) {
+    __extends(loadScreen, _super);
     function loadScreen() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return loadScreen;
-}());
+}(Phaser.State));
+var MainMenu = (function (_super) {
+    __extends(MainMenu, _super);
+    function MainMenu() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MainMenu.prototype.preload = function () {
+        _super.prototype.preload.call(this);
+    };
+    MainMenu.prototype.create = function () {
+        _super.prototype.create;
+    };
+    return MainMenu;
+}(Phaser.State));
 function exit() {
     window.location.href = "http://google.com";
 }
@@ -53,9 +78,13 @@ var Quest = (function () {
         this.game.load.image('Scene1', "assets/Maps/TestScene/Scene_Behind.png");
     };
     Quest.prototype.create = function () {
+        this.loadScreenState = new loadScreen();
+        this.mainMenuState = new MainMenu();
         var bg = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'Scene1');
         bg.anchor.setTo(0.5, 0.5);
         bg.scale.setTo(2);
+        this.game.state.add('loadscreen', this.loadScreenState);
+        this.game.state.add('MainMenu', this.mainMenuState);
     };
     return Quest;
 }());

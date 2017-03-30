@@ -8,7 +8,7 @@
         "removeComments": true
     },
     "include": [
-        "typescript/*.*"
+        "typescript/*.ts"
     ],
     "exclude": [
         "typescript/p2.d.ts",
