@@ -6,6 +6,7 @@
 /// <reference path="Lib/item.ts"/>
 /// <reference path="Lib/GameStates/loadscreen.ts"/>
 /// <reference path="Lib/GameStates/mainmenu.ts"/>
+/// <reference path="Lib/scene.ts"/>
 
 function exit()
 {
@@ -53,5 +54,5 @@ class Quest
 // Main function
 window.onload = () =>
 {
-    var game = new Quest();
+    let game = new Quest();
 }
