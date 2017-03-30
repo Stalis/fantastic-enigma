@@ -39,9 +39,21 @@ var Character = (function () {
     }
     return Character;
 }());
+var ItemState;
+(function (ItemState) {
+    ItemState[ItemState["Null"] = 0] = "Null";
+    ItemState[ItemState["Create"] = 1] = "Create";
+    ItemState[ItemState["Add"] = 2] = "Add";
+    ItemState[ItemState["Remove"] = 3] = "Remove";
+    ItemState[ItemState["Destroy"] = 4] = "Destroy";
+    ItemState[ItemState["PointerIn"] = 5] = "PointerIn";
+    ItemState[ItemState["PointerOut"] = 6] = "PointerOut";
+})(ItemState || (ItemState = {}));
 var Item = (function () {
     function Item() {
     }
+    Item.prototype.parse = function (json) {
+    };
     return Item;
 }());
 var loadScreen = (function (_super) {
@@ -49,6 +61,10 @@ var loadScreen = (function (_super) {
     function loadScreen() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    loadScreen.prototype.preload = function () {
+    };
+    loadScreen.prototype.create = function () {
+    };
     return loadScreen;
 }(Phaser.State));
 var MainMenu = (function (_super) {
