@@ -80,6 +80,28 @@ var MainMenu = (function (_super) {
     };
     return MainMenu;
 }(Phaser.State));
+var point = (function () {
+    function point() {
+    }
+    return point;
+}());
+var LayerGate = (function () {
+    function LayerGate() {
+    }
+    return LayerGate;
+}());
+var SceneLayer = (function () {
+    function SceneLayer() {
+    }
+    return SceneLayer;
+}());
+var Scene = (function () {
+    function Scene() {
+    }
+    Scene.prototype.updateLayers = function () {
+    };
+    return Scene;
+}());
 function exit() {
     window.location.href = "http://google.com";
 }
